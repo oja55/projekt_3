@@ -14,7 +14,7 @@ Spuštění projektu je přes terminál a bude vyžadovat 2 argumenty. Do první
 
 # Ukázka projektu
 
-# Výsledky hlasování pro Plzeň-město:
+Výsledky hlasování pro Plzeň-město:
 
     1. argument: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=4&xnumnuts=3203
     2. argument: vysledky_plzen.csv
