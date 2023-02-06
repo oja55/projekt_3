@@ -14,19 +14,21 @@ Spuštění projektu je přes terminál a bude vyžadovat 2 argumenty. Do první
 
 # Ukázka projektu
 
-Výsledky hlasování pro Plzeň-město:
+Výsledky hlasování pro Most:
 
-    1. argument: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=4&xnumnuts=3203
-    2. argument: vysledky_plzen.csv
+    1. argument: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=6&xnumnuts=4205
+    2. argument: vysledky_most.csv
 
 Spuštění programu:
 
-![terminal start](https://user-images.githubusercontent.com/116887934/216806496-c0848bdb-1511-462a-84ac-caef01cace0e.png)
+    PS C:\Users\Ondřej\PycharmProjects\projekt_3 Engeto> python main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=6&xnumnuts=4205" vysledky_most.csv
 
 Průběh stahování:
 
-![terminal complete](https://user-images.githubusercontent.com/116887934/216806696-3e108a6c-822d-4e89-b012-8e28a028bf36.png)
+    Downloading...
+    Download complete. Saved file: vysledky_most.csv
 
 Částečný výstup:
 
-![csv output](https://user-images.githubusercontent.com/116887934/216806600-0789bf0a-2528-4e6f-adda-96865a81d08b.png)
+![csv most](https://user-images.githubusercontent.com/116887934/217022028-00816778-dfb4-4ec9-bc93-9c117304696e.png)
+
