@@ -21,9 +21,7 @@ def check_arguments():
     elif not sys.argv[2].endswith(".csv"):
         print("Must be .csv file, shutting down the program.")
         exit()
-    else:
-        csv_output()
-        print(f"Download complete. Saved file: {sys.argv[2]}")
+
 
 # získá url z prvního argumentu a pomocí BeautifulSoup převede url
 def get_url():
@@ -113,18 +111,25 @@ def csv_output():
     print("Downloading...")
     header = ["code", "location", "registered", "envelopes", "valid"] + get_party()
 
+    rows = [header]
+    town_codes = get_town_codes()
+    town_names = get_town_names()
+    registered = get_registered()
+    envelopes = get_envelopes()
+    valid_votes = get_valid_votes()
+    party_votes = get_votes()
+
+    for i in range(len(town_names)):
+        row = [town_codes[i], town_names[i], registered[i], envelopes[i], valid_votes[i]] + party_votes[i]
+        rows.append(row)
+
     with open(sys.argv[2], "w", newline="") as file:
-         writer = csv.writer(file)
-         writer.writerow(header)
-         for i in range(len(get_town_names())):
-             writer.writerow(
-                 [get_town_codes()[i],
-                  get_town_names()[i],
-                  get_registered()[i],
-                  get_envelopes()[i],
-                  get_valid_votes()[i]
-                 ] + get_votes()[i]
-              )
+        writer = csv.writer(file)
+        writer.writerows(rows)
+
+    print(f"Download complete. Saved file: {sys.argv[2]}")
+
 
 if __name__ == "__main__":
     check_arguments()
+    csv_output()
